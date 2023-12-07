@@ -1,7 +1,7 @@
-import { Team } from "../components/team";
+import { Team } from "@/components/team";
 import styled from "styled-components";
 import Link from "next/link";
-import { Header } from "../components/header";
+import { Header } from "@/components/header";
 import TypeIt from "typeit-react";
 
 const AboutWrapper = styled.div`
