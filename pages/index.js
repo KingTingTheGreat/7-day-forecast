@@ -17,17 +17,24 @@ const PageWrapper = styled.div`
 	background-color: purple;
 `;
 
-export default function Home({ initialLocation }) {
+export default function Home() {
 	const [weatherData, setWeatherData] = useState(null);
 
 	useEffect(() => {
-		// client side fetch for location data
+		// client side fetch for ip address
 		const fetchGeoLocation = async () => {
 			try {
-				const geoLocationResponse = await fetch("https://geolocation-db.com/json/");
-				const geoLocationData = await geoLocationResponse.json();
-				const location = geoLocationData.city;
-				// server side fetch for weather data using the location because api key is stored in server side env
+				// client side fetch for ip address
+				const ipAddressResponse = await fetch("https://api.ipify.org/?format=json");
+				const ipAddressData = await ipAddressResponse.json();
+				const ip = ipAddressData.ip;
+
+				// server side calls becaus api keys are stored in server side env
+				// use this ip address to find their location
+				const locationResponse = await fetch(`/api/location?ip=${ip}`);
+				const locationData = await locationResponse.json();
+				const location = locationData.city;
+				// use their location to get weather data
 				const weatherDataResponse = await fetch(`/api/weather?location=${location}`);
 				const weatherData = await weatherDataResponse.json();
 				setWeatherData(weatherData);
