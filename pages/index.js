@@ -18,6 +18,7 @@ const PageWrapper = styled.div`
 `;
 
 export default function Home() {
+	const [location, setLocation] = useState(null);
 	const [weatherData, setWeatherData] = useState(null);
 
 	useEffect(() => {
@@ -33,7 +34,7 @@ export default function Home() {
 				// use this ip address to find their location
 				const locationResponse = await fetch(`/api/location?ip=${ip}`);
 				const locationData = await locationResponse.json();
-				const location = locationData.city;
+				setLocation(locationData.city);
 				// use their location to get weather data
 				const weatherDataResponse = await fetch(`/api/weather?location=${location}`);
 				const weatherData = await weatherDataResponse.json();
@@ -53,7 +54,7 @@ export default function Home() {
 				<title>Weather | CS392 Final</title>
 				<meta name="description" content="Our weather app" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favicon.ico" />
+				<link rel="icon" href="./icon.png" />
 			</Head>
 			<Header />
 			<main className={`${styles.main} ${inter.className}`}>
@@ -61,7 +62,7 @@ export default function Home() {
 				<h1>Weather Page</h1>
 				{weatherData ? (
 					<>
-						<h1>{weatherData.address}</h1>
+						<h1>{location}</h1>
 						<WeatherDisplay weatherData={weatherData} />{" "}
 					</>
 				) : (

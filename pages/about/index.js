@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { Team } from "@/components/team";
 import styled from "styled-components";
 import Link from "next/link";
@@ -38,6 +39,12 @@ const LinkWrapper = styled.div`
 export default function About() {
 	return (
 		<>
+			<Head>
+				<title>About | CS392 Final</title>
+				<meta name="description" content="Our weather app" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<link rel="icon" href="../icon.png" />
+			</Head>
 			<Header />
 			<main style={{ height: "100%" }}>
 				<Title>
