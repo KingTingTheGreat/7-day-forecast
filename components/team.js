@@ -86,7 +86,7 @@ const SocialLinks = (socials) => {
 
 function createMember(member, key) {
 	const { name, picture, bio, socials } = member;
-	console.log(member);
+	// console.log(member);
 	return (
 		<MemberWrapper key={key}>
 			<MemberName>{name}</MemberName>
