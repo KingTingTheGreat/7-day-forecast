@@ -1,7 +1,6 @@
 import { TeamMembers } from "../data";
 import styled from "styled-components";
 import Image from "next/image";
-// import * as AspectRatio from "@radix-ui/react-aspect-ratio";
 import QRCode from "react-qr-code";
 import Link from "next/link";
 
@@ -17,9 +16,9 @@ const MemberWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 20rem;
-	margin: 1.25rem;
-	padding: 1.25rem;
+	width: 18rem;
+	margin: 0.5rem;
+	padding: 0.5rem;
 	border-radius: 1.5rem;
 	background-color: aquamarine;
 `;
@@ -54,26 +53,19 @@ const MemberBio = styled.p`
 const SocialLinksWrapper = styled.div`
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
 	width: 100%;
-`;
-
-const LinkWrapper = styled.div`
-	max-width: 20px;
-	max-height: 20px;
-	padding: 0.5rem;
-	margin: 0.25rem;
 `;
 
 const SocialLinks = (socials) => {
 	const s = socials.socials;
 	const links = s.filter((social) => social.url);
-	const maxW = 64;
+	const maxW = 40;
 	return (
 		<>
 			{links.map((social, i) => (
-				<div key={i} style={{ height: "auto", margin: "0 auto", maxWidth: maxW, width: "100%" }}>
+				<div key={i} style={{ height: "auto", margin: "0.25rem", maxWidth: maxW, width: "100%" }}>
 					<Link href={social.url} target="_blank">
 						{social.imgSrc ? (
 							<Image src={social.imgSrc} alt={social.url} width={maxW} height={maxW} />
@@ -100,7 +92,7 @@ function createMember(member, key) {
 			<MemberName>{name}</MemberName>
 			<ImageWrapper>
 				<ImageStyler>
-					<Image src={picture} alt={name} width={200} height={200} />
+					<Image src={picture} alt={name} width={150} height={150} />
 				</ImageStyler>
 			</ImageWrapper>
 			<MemberBio>{bio}</MemberBio>

@@ -3,25 +3,34 @@ import styled from "styled-components";
 import Link from "next/link";
 import { Header } from "@/components/header";
 import TypeIt from "typeit-react";
+import { useEffect, useState } from "react";
 
 const AboutWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 	width: 100%;
+	text-align: center;
 `;
 
 const Title = styled.h1`
-	font-size: 3rem;
+	font-size: 3.5rem;
 	font-weight: 600;
-	margin: 1rem;
-	padding: 1rem;
+	margin: 0.25rem;
+	padding: 0.25rem;
+	text-align: center;
+`;
+
+const Description = styled.p`
+	font-size: 1rem;
+	margin: 0.25rem;
+	padding: 0.25rem;
+	width: 60%;
 `;
 
 const LinkWrapper = styled.div`
-	margin: 1rem;
-	padding: 1rem;
+	margin: 0.5rem;
+	padding: 0.25rem;
 	hover: {
 		color: blue;
 	}
@@ -32,14 +41,26 @@ export default function About() {
 		<>
 			<Header />
 			<main style={{ height: "100%" }}>
+				<Title>
+					<TypeIt
+						getBeforeInit={(instance) =>
+							instance.type("Meet our team").pause(500).type("!!!").pause(500).type(" :]")
+						}
+						// // remove blinking cursor; doesn't work, causes issues when switching pages
+						// options={{
+						// 	lifeLike: true,
+						// 	afterComplete: (instance) => {
+						// 		instance.destroy();
+						// 	},
+						// }}
+					/>
+				</Title>
 				<AboutWrapper>
-					<TypeIt>
-						<Title>Meet our team!</Title>
-					</TypeIt>
-					<p>
-						We are a group of students at Boston University who are passionate about technology and its
-						applications to the real world. We are currently working on our final project for CS392.
-					</p>
+					<Description>
+						We are a team of undergraduate students at Boston University who are passionate about Computer
+						Science and its applications to the real world. This is our final project a weather app that
+						uses the user's location to display and predict the weather.
+					</Description>
 					<LinkWrapper>
 						<Link href="github.com" target="_blank" />
 					</LinkWrapper>

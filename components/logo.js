@@ -5,8 +5,8 @@ const LogoWrapper = styled.div`
 	color: blue;
 	font-size: 2rem;
 	font-weight: 600;
-	padding: 1rem;
-	margin: 1rem;
+	padding: 0.5rem;
+	margin: 0.5rem;
 `;
 
 export const Logo = () => {

@@ -15,8 +15,8 @@ const NavLinks = styled.div`
 	align-items: center;
 	text-decoration: none;
 	color: black;
-	margin: 1rem;
-	padding: 1rem;
+	margin: 0.5rem;
+	padding: 0.5rem;
 	font-size: 1.5rem;
 	hover: {
 		color: blue;
