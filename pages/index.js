@@ -52,7 +52,14 @@ export default function Home({ initialLocation }) {
 			<main className={`${styles.main} ${inter.className}`}>
 				{/* <PageWrapper> */}
 				<h1>Weather Page</h1>
-				{weatherData ? <WeatherDisplay weatherData={weatherData} /> : <Loading />}
+				{weatherData ? (
+					<>
+						<h1>{weatherData.address}</h1>
+						<WeatherDisplay weatherData={weatherData} />{" "}
+					</>
+				) : (
+					<Loading />
+				)}
 				{/* </PageWrapper> */}
 			</main>
 		</>
