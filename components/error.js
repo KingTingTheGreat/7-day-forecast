@@ -25,11 +25,20 @@ const ErrorMessage = styled.p`
 	padding: 0.5rem;
 `;
 
-export const Error = () => {
+export const WeatherError = () => {
 	return (
 		<ErrorWrapper>
 			<ErrorHeader>Error</ErrorHeader>
-			<ErrorMessage>Please disable your ad blocker.</ErrorMessage>
+			<ErrorMessage>Could not load weather data.</ErrorMessage>
+		</ErrorWrapper>
+	);
+};
+
+export const LocationError = () => {
+	return (
+		<ErrorWrapper>
+			<ErrorHeader>Error</ErrorHeader>
+			<ErrorMessage>Could not retrive your location. Try disabling your ad blocker.</ErrorMessage>
 		</ErrorWrapper>
 	);
 };
