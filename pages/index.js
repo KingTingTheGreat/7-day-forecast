@@ -2,8 +2,6 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Header } from "@/components/header";
-// import { Weather } from "@/components/weather";
-import { WeatherWithData } from "@/hooks/test";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +17,6 @@ export default function Home() {
 			<Header />
 			<main className={`${styles.main} ${inter.className}`}>
 				<div>welcome to our app</div>
-				{/* <WeatherWithData /> */}
 				<p>Home</p>
 			</main>
 		</>
