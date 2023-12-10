@@ -40,8 +40,8 @@ export const DayWeather = ({ day }) => {
 			<p>sunset: {sunset}</p>
 			<div style={{ backgroundColor: "lightblue" }}>
 				conditions:{" "}
-				{conditions.split(", ").map((cond) => (
-					<p>{cond}</p>
+				{conditions.split(", ").map((cond, i) => (
+					<p key={i}>{cond}</p>
 				))}
 			</div>
 			<p style={{ backgroundColor: "lightgreen" }}>desc: {description}</p>
