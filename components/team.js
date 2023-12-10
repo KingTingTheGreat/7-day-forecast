@@ -72,8 +72,8 @@ const SocialLinks = (socials) => {
 	const maxW = 64;
 	return (
 		<>
-			{links.map((social) => (
-				<div style={{ height: "auto", margin: "0 auto", maxWidth: maxW, width: "100%" }}>
+			{links.map((social, i) => (
+				<div key={i} style={{ height: "auto", margin: "0 auto", maxWidth: maxW, width: "100%" }}>
 					<Link href={social.url} target="_blank">
 						{social.imgSrc ? (
 							<Image src={social.imgSrc} alt={social.url} width={maxW} height={maxW} />
@@ -92,11 +92,11 @@ const SocialLinks = (socials) => {
 	);
 };
 
-function createMember(member) {
+function createMember(member, key) {
 	const { name, picture, bio, socials } = member;
 	console.log(member);
 	return (
-		<MemberWrapper>
+		<MemberWrapper key={key}>
 			<MemberName>{name}</MemberName>
 			<ImageWrapper>
 				<ImageStyler>
@@ -112,5 +112,5 @@ function createMember(member) {
 }
 
 export const Team = () => {
-	return <TeamWrapper>{TeamMembers.map((member, i) => createMember(member))}</TeamWrapper>;
+	return <TeamWrapper>{TeamMembers.map((member, i) => createMember(member, i))}</TeamWrapper>;
 };
