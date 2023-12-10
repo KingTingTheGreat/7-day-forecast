@@ -35,18 +35,27 @@ export default function Home() {
 				const locationResponse = await fetch(`/api/location?ip=${ip}`);
 				const locationData = await locationResponse.json();
 				setLocation(locationData.city);
+
+				if (location === null) {
+					throw "Location not found";
+				}
+
 				// use their location to get weather data
 				const weatherDataResponse = await fetch(`/api/weather?location=${location}`);
 				const weatherData = await weatherDataResponse.json();
 				setWeatherData(weatherData);
 			} catch (error) {
+				if (error === "Location not found") {
+					setWeatherData(null);
+				} else {
+					setWeatherData("WEATHER ERROR");
+				}
 				console.error("Error fetching data:", error);
-				setWeatherData("ERROR");
 			}
 		};
 
 		fetchGeoLocation();
-	}, []);
+	}, [location]);
 
 	return (
 		<>
