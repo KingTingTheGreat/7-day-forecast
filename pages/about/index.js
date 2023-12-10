@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Link from "next/link";
 import { Header } from "@/components/header";
 import TypeIt from "typeit-react";
-import { useEffect, useState } from "react";
 
 const AboutWrapper = styled.div`
 	display: flex;
@@ -59,7 +58,7 @@ export default function About() {
 					<Description>
 						We are a team of undergraduate students at Boston University who are passionate about Computer
 						Science and its applications to the real world. This is our final project a weather app that
-						uses the user's location to display and predict the weather.
+						uses the user&apos;s location to display and predict the weather.
 					</Description>
 					<LinkWrapper>
 						<Link href="github.com" target="_blank" />
