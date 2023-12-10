@@ -1,4 +1,4 @@
-import { WeatherError, LocationError } from "./error.js";
+import { Error } from "./error.js";
 import React from "react";
 import styled from "styled-components";
 import { DayWeather } from "./dayWeather.js";
@@ -13,7 +13,7 @@ const ForecastWrapper = styled.div`
 `;
 
 export const WeatherDisplay = ({ weatherData }) => {
-	const city = weatherData.address;
+	// weatherData.days = null; // uncomment to test error
 	return (
 		<ForecastWrapper>
 			{weatherData.days ? (
@@ -21,7 +21,7 @@ export const WeatherDisplay = ({ weatherData }) => {
 					return <DayWeather key={i} day={day} />;
 				})
 			) : (
-				<WeatherError />
+				<Error />
 			)}
 		</ForecastWrapper>
 	);
