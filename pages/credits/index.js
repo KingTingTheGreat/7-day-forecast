@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const inner = "#4DA9FF";
+const inner = "#7FCCFF";
 const outer = "#FFFFFF";
 
 const PageWrapper = styled.div`

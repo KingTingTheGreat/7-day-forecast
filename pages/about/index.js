@@ -45,7 +45,7 @@ const LinkWrapper = styled.div`
 `;
 
 const inner = "#FFFFFF";
-const outer = "#4DA9FF";
+const outer = "#7FCCFF";
 
 const PageWrapper = styled.div`
 	display: flex;
