@@ -93,8 +93,8 @@ export default function About() {
 				<AboutWrapper>
 					<Description>
 						We are a team of undergraduate students at Boston University who are passionate about Computer
-						Science and its applications to the real world. This is our final project a weather app that
-						uses the user&apos;s location to display and predict the weather.
+						Science and its applications to the real world. This is our final project for CS392 - a weather
+						app that uses the user&apos;s location to display and predict the weather.
 					</Description>
 					<LinkWrapper>
 						<Link href="github.com" target="_blank" />

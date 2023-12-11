@@ -82,12 +82,6 @@ const LightBox = styled.div`
 			--border-angle: 1turn;
 		}
 	}
-
-	@property --border-angle {
-		syntax: "<angle>";
-		inherits: true;
-		initial-value: 0turn;
-	}
 `;
 
 const SocialLinks = (socials) => {
