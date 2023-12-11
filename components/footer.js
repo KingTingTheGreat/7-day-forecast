@@ -3,8 +3,10 @@ import Link from "next/link";
 
 const FooterWrapper = styled.div`
 	padding: 5px;
-	background-color: green;
-	text-align: right;
+	background-color: white;
+	text-align: center;
+	width: 100%;
+	margin-top: 5rem;
 `;
 
 const CreditsLink = styled(Link)`
@@ -12,9 +14,9 @@ const CreditsLink = styled(Link)`
 `;
 
 export const Footer = () => {
-    return (
-        <FooterWrapper>
-            <CreditsLink href="/credits">Credits</CreditsLink>
-        </FooterWrapper>
-    );
+	return (
+		<FooterWrapper>
+			<CreditsLink href="/credits">Credits</CreditsLink>
+		</FooterWrapper>
+	);
 };

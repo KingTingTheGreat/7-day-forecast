@@ -10,7 +10,8 @@ const DayWrapper = styled.div`
 	background-color: white;
 	border: 1px solid white;
 	border-radius: 1rem;
-	padding: 0.5rem;
+	padding: 1rem;
+	height: 50%;
 `;
 
 const Date = styled.h2`
@@ -41,8 +42,8 @@ const Description = styled.h4`
 
 const Precip = styled.h4`
 	align-items: left;
-	padding: 0.5rem 0.1rem;
-	color: navy;
+	padding: 1rem 0;
+	color: #445de3;
 `;
 
 export const DayWeather = ({ day }) => {
@@ -101,8 +102,10 @@ export const DayWeather = ({ day }) => {
 					) : null}
 				</Icon>
 			</Container>
-			<Description>{description}</Description>
-			<Precip>{preciptype !== null ? <p>{precipprob}% chance of precipitation</p> : null}</Precip>
+			<Description>
+				{description}
+				<Precip>{preciptype !== null ? <p>{precipprob}% chance of precipitation</p> : null}</Precip>
+			</Description>
 			{/* <p>date: {date}</p>
 			<p>temp high: {tempmax}&deg;F</p>
 			<p>temp low: {tempmin}&deg;F</p>
