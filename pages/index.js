@@ -106,7 +106,7 @@ export default function Home() {
 				<link rel="icon" href="/icon.png" />
 			</Head>
 			<Header toggleInfo={toggleInfo} />
-			<Info infoVis={infoVis} />
+			<Info infoVis={info} />
 			<main className={`${styles.main} ${inter.className}`}>
 				{/* <PageWrapper> */}
 				{location ? <Location>This week in {location}...</Location> : <></>}
