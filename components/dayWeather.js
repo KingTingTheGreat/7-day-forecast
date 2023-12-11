@@ -8,10 +8,11 @@ const DayWrapper = styled.div`
 	min-width: 220px;
 	margin: 0.5rem;
 	background-color: white;
-	border: 1px solid white;
+	border: 2px solid #c7c7c7;
 	border-radius: 1rem;
 	padding: 1rem;
 	align-self: stretch;
+	z-index: 10;
 `;
 
 const Date = styled.h2`
@@ -52,7 +53,6 @@ const Snow = styled.h4`
 `;
 
 export const DayWeather = ({ day }) => {
-	console.log(day);
 	const date = day.datetime;
 	const tempmax = Math.floor(day.tempmax);
 	const tempmin = Math.floor(day.tempmin);

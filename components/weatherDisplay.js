@@ -14,6 +14,7 @@ const ForecastWrapper = styled.div`
 
 export const WeatherDisplay = ({ weatherData }) => {
 	// weatherData.days = null; // uncomment to test error
+
 	return (
 		<ForecastWrapper>
 			{weatherData.days ? (
