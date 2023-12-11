@@ -2,10 +2,12 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Header } from "@/components/header";
+import { Info } from "@/components/info";
 import React, { useState, useEffect } from "react";
 import WeatherDisplay from "@/components/weatherDisplay.js";
 import styled from "styled-components";
 import { Loading } from "@/components/loading";
+import { Footer } from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +15,11 @@ export default function Home() {
 	const [location, setLocation] = useState(null);
 	const [weatherData, setWeatherData] = useState(null);
 	const [time, setTime] = useState(null);
+	const [info, setInfo] = useState(false);
+
+	const toggleInfo = () => {
+		setInfo(!info);
+	};
 
 	useEffect(() => {
 		// client side fetch for ip address
@@ -98,7 +105,8 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/icon.png" />
 			</Head>
-			<Header />
+			<Header toggleInfo={toggleInfo} />
+			<Info infoVis={infoVis} />
 			<main className={`${styles.main} ${inter.className}`}>
 				{/* <PageWrapper> */}
 				{location ? <Location>This week in {location}...</Location> : <></>}
@@ -111,6 +119,7 @@ export default function Home() {
 				)}
 				{/* </PageWrapper> */}
 			</main>
+			<Footer />
 		</PageWrapper>
 	);
 }

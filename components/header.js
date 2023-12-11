@@ -24,11 +24,20 @@ const NavLinks = styled.div`
 	}
 `;
 
-export const Header = () => {
+const InfoButton = styled.button`
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	font-size: x-large;
+	margin-right: 10px;
+`;
+
+export const Header = ({ toggleInfo }) => {
 	return (
 		<NavWrapper>
 			<Logo />
 			<NavLinks>
+				<InfoButton onClick={toggleInfo}>&#9432;</InfoButton>
 				<Link href="/about">About</Link>
 			</NavLinks>
 		</NavWrapper>
