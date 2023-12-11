@@ -9,10 +9,13 @@ import styled from "styled-components";
 import { Loading } from "@/components/loading";
 import { Footer } from "@/components/footer";
 import { Moon } from "@/components/moon";
+import { Sun } from "@/components/sun";
+import { Clouds } from "@/components/clouds";
+import { Rain } from "@/components/rain";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const MoonDiv = styled.div`
+const AddOn = styled.div`
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -78,8 +81,6 @@ export default function Home() {
 	var text = "#000000";
 	var pic = "";
 
-	var addOn = <></>;
-
 	if (icon === "clear-day") {
 		console.log("clear day");
 		// if its night time
@@ -103,8 +104,9 @@ export default function Home() {
 		bottom = "#6A6A6A";
 		pic = "snow";
 	} else {
-		top = "#FFFFFF";
-		bottom = "#B7B7B7";
+		top = "#96C7F5";
+		bottom = "#FFFFFF";
+		pic = "cloud";
 	}
 
 	const PageWrapper = styled.div`
@@ -148,9 +150,13 @@ export default function Home() {
 				)}
 				{/* </PageWrapper> */}
 			</main>
-			<MoonDiv>
-				<Moon />
-			</MoonDiv>
+			<AddOn>
+				{pic === "moon" ? <Moon /> : null}
+				{pic === "sun" ? <Sun /> : null}
+				{pic === "rain" ? <Rain /> : null}
+				{pic === "snow" ? <Moon /> : null}
+				{pic === "cloud" ? <Clouds /> : null}
+			</AddOn>
 			<Footer />
 		</PageWrapper>
 	);
