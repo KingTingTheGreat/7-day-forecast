@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import WeatherDisplay from "@/components/weatherDisplay.js";
 import styled from "styled-components";
 import { Loading } from "@/components/loading";
+import { Footer } from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -86,6 +87,7 @@ export default function Home() {
 				)}
 				{/* </PageWrapper> */}
 			</main>
+			<Footer />
 		</>
 	);
 }

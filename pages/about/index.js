@@ -6,6 +6,7 @@ import { Header } from "@/components/header";
 import { Info } from "@/components/info";
 import TypeIt from "typeit-react";
 import { useState } from "react";
+import { Footer } from "@/components/footer";
 
 const AboutWrapper = styled.div`
 	display: flex;
@@ -82,6 +83,7 @@ export default function About() {
 					<Team />
 				</AboutWrapper>
 			</main>
+			<Footer />
 		</>
 	);
 }
