@@ -1,10 +1,27 @@
 import Head from "next/head";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
 import styled from "styled-components";
 import { Header } from "@/components/header";
 import { Info } from "@/components/info";
 import { useState } from "react";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
+
+const inter = Inter({ subsets: ["latin"] });
+
+const inner = "#4DA9FF";
+const outer = "#FFFFFF";
+
+const PageWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	background: radial-gradient(${inner}, ${outer});
+`;
 
 const Title = styled.p`
 	font-size: x-large;
@@ -20,7 +37,7 @@ export default function Credits() {
 	}
 
 	return (
-		<>
+		<PageWrapper>
 			<Head>
 				<title>Credits | CS392 Final</title>
 				<meta name="description" content="Our weather app" />
@@ -29,7 +46,7 @@ export default function Credits() {
 			</Head>
 			<Header toggleInfo={toggleInfo} />
 			<Info infoVis={infoVis} />
-			<main style={{ height: "100%" }}>
+			<main className={`${styles.main} ${inter.className}`}>
 				<Title>
 					This weather app is the work of Jeffrey Ting, Rida Naeem, and Abir Islam. The{" "}
 					<Link style={{ color: "blue", textDecoration: "underline" }} href={"https://ipgeolocation.io/"}>
@@ -49,6 +66,6 @@ export default function Credits() {
 				</Title>
 			</main>
 			<Footer />
-		</>
+		</PageWrapper>
 	);
 }
