@@ -94,17 +94,22 @@ export default function Home() {
 		fetchGeoLocation();
 	}, [location]);
 
-	const date = String(time).substring(11, 13);
+	// get the hour in order to determine whether its day or night
+	const hour = String(time).substring(11, 13);
 
+	// set the background color based on the weather, with the background being a gradient
 	var top = "#000000";
 	var bottom = "#FFFFFF";
+	// the text is defaulted to black but can be changed to white if the background is dark
 	var text = "#000000";
+	// will be used to determine which graphic to display
 	var pic = "";
 
+	// if its a clear day
 	if (icon === "clear-day") {
 		console.log("clear day");
 		// if its night time
-		if (date >= 18 || date <= 6) {
+		if (hour >= 18 || hour <= 6) {
 			top = "#445DE3";
 			bottom = "#090D3A";
 			text = "#FFFFFF";
@@ -115,18 +120,22 @@ export default function Home() {
 			bottom = "#4DA9FF";
 			pic = "sun";
 		}
+		// if its a rainy day
 	} else if (icon === "rain") {
 		top = "#C7C7C7";
 		bottom = "#133758";
 		pic = "rain";
+		// if its a snowy day
 	} else if (icon === "snow") {
 		top = "#FFFFFF";
 		bottom = "#6A6A6A";
 		pic = "snow";
+		// if its a cloudy day
 	} else if (icon === "partly-cloudy-day" || icon === "cloudy") {
 		top = "#96C7F5";
 		bottom = "#FFFFFF";
 		pic = "cloud";
+		// default to a white background in case of errors or other weather
 	} else {
 		top = "#FFFFFF";
 		bottom = "#FFFFFF";
@@ -162,8 +171,9 @@ export default function Home() {
 			<Header toggleInfo={toggleInfo} />
 			<Info infoVis={info} />
 			<main className={`${styles.main} ${inter.className}`}>
-				{/* <PageWrapper> */}
+				{/* if a location has been found, display  */}
 				{location ? <Location>This week in {location}...</Location> : <></>}
+				{/* if weather data has been found, display, else: load */}
 				{weatherData ? (
 					<>
 						<WeatherDisplay weatherData={weatherData} />{" "}
@@ -171,8 +181,9 @@ export default function Home() {
 				) : (
 					<Loading />
 				)}
-				{/* </PageWrapper> */}
 			</main>
+
+			{/* for snowy and rainy days because of the size of the graphics the component heights/widths will be a little different */}
 			{pic === "snow" ? (
 				<SnowAddOn>
 					<Snowman />
@@ -182,6 +193,7 @@ export default function Home() {
 					<Rain />
 				</RainAddOn>
 			) : (
+				// default add ons for other weather conditions
 				<AddOn>
 					{pic === "moon" ? <Moon /> : null}
 					{pic === "sun" ? <Sun /> : null}

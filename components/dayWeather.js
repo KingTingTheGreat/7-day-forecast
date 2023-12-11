@@ -53,21 +53,19 @@ const Snow = styled.h4`
 `;
 
 export const DayWeather = ({ day }) => {
+	// the data collected for each location on each day from weather api 
 	const date = day.datetime;
-	const tempmax = Math.floor(day.tempmax);
-	const tempmin = Math.floor(day.tempmin);
-	const precip = day.precip;
 	const precipprob = day.precipprob;
 	const preciptype = day.preciptype;
 	const snow = day.snow;
 	const snowdepth = day.snowdepth;
-	const cloudcover = day.cloudcover;
-	const sunrise = day.sunrise;
-	const sunset = day.sunset;
-	const conditions = day.conditions;
 	const description = day.description;
 	const icon = day.icon;
+	// get rid of the decimals for a cleaner look 
+	const tempmax = Math.floor(day.tempmax);
+	const tempmin = Math.floor(day.tempmin);
 
+	// months of the year, to be indexed by month variable
 	const months = [
 		"January",
 		"February",
@@ -82,6 +80,8 @@ export const DayWeather = ({ day }) => {
 		"November",
 		"December",
 	];
+
+	// date formatting
 	const month = months[String(date).substring(5, 7) - 1];
 	const calDate = String(date).substring(8, 11);
 	const year = String(date).substring(0, 4);
@@ -97,6 +97,7 @@ export const DayWeather = ({ day }) => {
 					<br></br>
 					{tempmin}&deg;F / {tempmax}&deg;F
 				</Temp>
+				{/* the specific emoji that will be displayed is dependent on the weather conditions of that day */}
 				<Icon>
 					{icon === "clear-day" ? (
 						<p>☀️</p>
@@ -129,28 +130,11 @@ export const DayWeather = ({ day }) => {
 			</Container>
 			<Description>
 				{description}
+				{/* if there is a chance of preciipation, display that chance */}
 				<Precip>{preciptype !== null ? <p>{precipprob}% chance of precipitation</p> : null}</Precip>
+				{/* if snow is expected, display details  */}
 				<Snow>{snow !== 0 ? <p>Expecting {snowdepth} in. of snow</p> : null}</Snow>
 			</Description>
-			{/* <p>date: {date}</p>
-			<p>temp high: {tempmax}&deg;F</p>
-			<p>temp low: {tempmin}&deg;F</p>
-			<p>precipitation: {precip} in.</p>
-			<p>precipitation probability: {precipprob}%</p>
-			<p>precipitation type: {preciptype ? preciptype : "None"}</p>
-			<p>snowfall: {snow} in.</p>
-			<p>snow depth: {snowdepth} in.</p>
-			<p>cloud cover: {cloudcover}%</p>
-			<p>sunrise: {sunrise}</p>
-			<p>sunset: {sunset}</p>
-			<div style={{ backgroundColor: "lightblue" }}>
-				conditions:{" "}
-				{conditions.split(", ").map((cond, i) => (
-					<p key={i}>{cond}</p>
-				))}
-			</div>
-			<p style={{ backgroundColor: "lightgreen" }}>desc: {description}</p>
-			<p>icon: {icon}</p> */}
 		</DayWrapper>
 	);
 };
