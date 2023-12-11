@@ -21,7 +21,7 @@ const AddOn = styled.div`
 	bottom: 0;
 	left: 0;
 	z-index: 1;
-	margin: 1rem 2.5rem;
+	// margin: 1rem 2.5rem;
 	width: 50%;
 	height: 50%;
 `;
@@ -34,6 +34,15 @@ const SnowAddOn = styled.div`
 	margin: 1rem 0;
 	width: 10%;
 	height: 70%;
+`;
+
+const RainAddOn = styled.div`
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	margin: 1rem 5rem;
+	height: 55vh;
 `;
 
 export default function Home() {
@@ -114,10 +123,13 @@ export default function Home() {
 		top = "#FFFFFF";
 		bottom = "#6A6A6A";
 		pic = "snow";
-	} else {
+	} else if (icon === "partly-cloudy-day" || icon === "cloudy") {
 		top = "#96C7F5";
 		bottom = "#FFFFFF";
 		pic = "cloud";
+	} else {
+		top = "#FFFFFF";
+		bottom = "#FFFFFF";
 	}
 
 	const PageWrapper = styled.div`
@@ -165,6 +177,10 @@ export default function Home() {
 				<SnowAddOn>
 					<Snowman />
 				</SnowAddOn>
+			) : pic === "rain" ? (
+				<RainAddOn>
+					<Rain />
+				</RainAddOn>
 			) : (
 				<AddOn>
 					{pic === "moon" ? <Moon /> : null}

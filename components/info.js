@@ -4,7 +4,7 @@ const InfoPage = styled.div`
 	background-color: white;
 	align-content: center;
 	position: fixed;
-	z-index: 1;
+	z-index: 15;
 	border-style: dashed;
 	border-radius: 10px;
 	padding: 10px;
