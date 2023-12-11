@@ -123,7 +123,7 @@ export default function Home() {
 		top = "#FFFFFF";
 		bottom = "#6A6A6A";
 		pic = "snow";
-	} else if (icon === "partly-cloudy-day") {
+	} else if (icon === "partly-cloudy-day" || icon === "cloudy") {
 		top = "#96C7F5";
 		bottom = "#FFFFFF";
 		pic = "cloud";
