@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
 import { Team } from "@/components/team";
 import styled from "styled-components";
 import Link from "next/link";
@@ -7,6 +9,8 @@ import { Info } from "@/components/info";
 import TypeIt from "typeit-react";
 import { useState } from "react";
 import { Footer } from "@/components/footer";
+
+const inter = Inter({ subsets: ["latin"] });
 
 const AboutWrapper = styled.div`
 	display: flex;
@@ -39,6 +43,18 @@ const LinkWrapper = styled.div`
 	}
 `;
 
+const inner = "#FFFFFF";
+const outer = "#4DA9FF";
+
+const PageWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(${inner}, ${outer});
+`;
+
 export default function About() {
 	const [infoVis, setInfoVis] = useState(false);
 
@@ -47,7 +63,7 @@ export default function About() {
 	}
 
 	return (
-		<>
+		<PageWrapper>
 			<Head>
 				<title>About | CS392 Final</title>
 				<meta name="description" content="Our weather app" />
@@ -56,7 +72,8 @@ export default function About() {
 			</Head>
 			<Header toggleInfo={toggleInfo} />
 			<Info infoVis={infoVis} />
-			<main style={{ height: "100%" }}>
+			{/* <main style={{ height: "100%" }}> */}
+			<main className={`${styles.main} ${inter.className}`}>
 				<Title>
 					<TypeIt
 						getBeforeInit={(instance) =>
@@ -84,6 +101,6 @@ export default function About() {
 				</AboutWrapper>
 			</main>
 			<Footer />
-		</>
+		</PageWrapper>
 	);
 }
