@@ -6,7 +6,8 @@ const NavWrapper = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: green;
+	background-color: white;
+	width: 100%;
 `;
 
 const NavLinks = styled.div`

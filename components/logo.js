@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Link from "next/link";
 
 const LogoWrapper = styled.div`
-	color: blue;
+	color: black;
 	font-size: 2rem;
 	font-weight: 600;
 	padding: 0.5rem;
@@ -12,7 +12,7 @@ const LogoWrapper = styled.div`
 export const Logo = () => {
 	return (
 		<Link href="/">
-			<LogoWrapper>CS392 Final</LogoWrapper>
+			<LogoWrapper>7 Day Forecast</LogoWrapper>
 		</Link>
 	);
 };
