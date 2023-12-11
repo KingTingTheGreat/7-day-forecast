@@ -62,15 +62,11 @@ const LightBox = styled.div`
 	text-align: center;
 	--border-size: 10px;
 	--border-angle: 0turn;
-	width: 30%;
+	width: 25%;
 	height: 100%;
-	background-image: conic-gradient(from var(--border-angle),
-	#213,
-	#112 100%,
-	#213),
-	conic-gradient(from var(--border-angle), transparent 10%, #0077ff, #00ffff);
-	background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)),
-	cover;
+	background-image: conic-gradient(from var(--border-angle), #213, #112 100%, #213),
+		conic-gradient(from var(--border-angle), transparent 10%, #0077ff, #00ffff);
+	background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
 	background-position: center center;
 	background-repeat: no-repeat;
 	animation: bg-spin 6s linear infinite;

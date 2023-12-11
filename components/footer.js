@@ -5,8 +5,9 @@ const FooterWrapper = styled.div`
 	padding: 5px;
 	background-color: white;
 	text-align: center;
-	width: 100%;
+	width: 100vw;
 	margin-top: 5rem;
+	z-index: 10;
 `;
 
 const CreditsLink = styled(Link)`

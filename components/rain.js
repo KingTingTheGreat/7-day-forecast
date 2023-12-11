@@ -2,41 +2,23 @@ import React from "react";
 
 export const Rain = () => {
 	return (
-		<svg width="387" height="365" viewBox="0 0 387 365" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path
-				d="M329.85 92.4599C321.9 67.9929 298.495 49.6557 264.782 41.4822C231.069 33.3087 189.811 35.9684 150.084 48.8762C110.357 61.784 75.4146 83.8827 52.9444 110.311C30.4742 136.739 22.3166 165.331 30.2662 189.798L180.058 141.129L329.85 92.4599Z"
-				fill="url(#paint0_linear_16_44)"
-			/>
-			<rect
-				x="176.729"
-				y="142.21"
-				width="8"
-				height="184"
-				transform="rotate(-17.9996 176.729 142.21)"
-				fill="#1C1C1C"
-			/>
-			<path
-				d="M235.933 311L240.715 323.036C242.46 325.675 247.54 329.877 253.893 325.568"
-				stroke="#1C1C1C"
-				stroke-width="8"
-			/>
-			<path
-				d="M253 327L254.815 322.672C255.235 321.373 255.975 318.148 255.578 315.643"
-				stroke="#1C1C1C"
-				stroke-width="8"
-			/>
-			<defs>
-				<linearGradient
-					id="paint0_linear_16_44"
-					x1="150.084"
-					y1="48.8762"
-					x2="210.032"
-					y2="233.382"
-					gradientUnits="userSpaceOnUse">
-					<stop stop-color="white" />
-					<stop offset="0.747085" stop-color="#424242" />
-				</linearGradient>
-			</defs>
+		<svg width="242" height="432" viewBox="0 0 242 432" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M77 27L202.5 23.5L187 325H69.5L77 27Z" fill="#F1C85E" />
+			<path d="M71 321L46 22.5L109.547 23.9463L71 321Z" fill="#F1C85E" />
+			<rect y="321" width="153" height="83" rx="41.5" fill="#F1C85E" />
+			<rect x="140" y="321" width="48" height="83" rx="16" fill="#F1C85E" />
+			<rect y="304" width="134" height="100" rx="42" fill="#F1C85E" />
+			<path d="M112 321H187.5V354H112V321Z" fill="#F1C85E" />
+			<rect x="77" y="359" width="91" height="33" fill="#F1C85E" />
+			<ellipse cx="124.5" cy="23.5" rx="78.5" ry="23.5" fill="#B69338" />
+			<path d="M116 55L241.5 51.5L226 353H108.5L116 55Z" fill="#FFDA7B" />
+			<path d="M110 349L85 50.5L148.547 51.9463L110 349Z" fill="#FFDA7B" />
+			<rect x="39" y="349" width="153" height="83" rx="41.5" fill="#FFDA7B" />
+			<rect x="179" y="349" width="48" height="83" rx="16" fill="#FFDA7B" />
+			<rect x="39" y="332" width="134" height="100" rx="42" fill="#FFDA7B" />
+			<path d="M151 349H226.5V382H151V349Z" fill="#FFDA7B" />
+			<rect x="116" y="387" width="91" height="33" fill="#FFDA7B" />
+			<ellipse cx="163.5" cy="51.5" rx="78.5" ry="23.5" fill="#DCB655" />
 		</svg>
 	);
 };
