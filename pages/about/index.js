@@ -3,7 +3,9 @@ import { Team } from "@/components/team";
 import styled from "styled-components";
 import Link from "next/link";
 import { Header } from "@/components/header";
+import { Info } from "@/components/info";
 import TypeIt from "typeit-react";
+import {useState} from "react";
 
 const AboutWrapper = styled.div`
 	display: flex;
@@ -37,6 +39,12 @@ const LinkWrapper = styled.div`
 `;
 
 export default function About() {
+	const [infoVis, setInfoVis] = useState(false);
+
+	function toggleInfo() {
+		setInfoVis(!infoVis)
+	}
+
 	return (
 		<>
 			<Head>
@@ -45,7 +53,8 @@ export default function About() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/icon.png" />
 			</Head>
-			<Header />
+			<Header toggleInfo={toggleInfo}/>
+			<Info infoVis={infoVis} />
 			<main style={{ height: "100%" }}>
 				<Title>
 					<TypeIt
