@@ -9,6 +9,8 @@ const LogoWrapper = styled.div`
 	margin: 0.5rem;
 `;
 
+// the logo displayed at the top of the page
+// also acts as a link to the home page
 export const Logo = () => {
 	return (
 		<Link href="/">

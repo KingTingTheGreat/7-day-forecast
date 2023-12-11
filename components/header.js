@@ -32,6 +32,7 @@ const InfoButton = styled.button`
 	margin-right: 10px;
 `;
 
+// the header displayed at the top of the page with links to the home page and the about page
 export const Header = ({ toggleInfo }) => {
 	return (
 		<NavWrapper>

@@ -57,7 +57,6 @@ export default function Home() {
 	};
 
 	useEffect(() => {
-		// client side fetch for ip address
 		const fetchGeoLocation = async () => {
 			try {
 				// client side fetch for ip address
@@ -66,7 +65,7 @@ export default function Home() {
 				const ip = ipAddressData.ip;
 
 				// server side calls becaus api keys are stored in server side env
-				// use this ip address to find their location
+				// use this ip address to call our backend and find their location
 				const locationResponse = await fetch(`/api/location?ip=${ip}`);
 				const locationData = await locationResponse.json();
 				setLocation(locationData.city);
@@ -76,7 +75,7 @@ export default function Home() {
 					throw "Location not found";
 				}
 
-				// use their location to get weather data
+				// use their location to call our backend to get weather data
 				const weatherDataResponse = await fetch(`/api/weather?location=${location}`);
 				const weatherData = await weatherDataResponse.json();
 				setWeatherData(weatherData);

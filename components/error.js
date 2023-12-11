@@ -25,10 +25,12 @@ const ErrorMessage = styled.p`
 	padding: 0.5rem;
 `;
 
+// error message displayed when the weather data is unable to be fetched
 export const Error = () => {
 	return (
 		<ErrorWrapper>
 			<ErrorHeader>Error</ErrorHeader>
+			{/* we found that some ad blockers inhibited earlier versions of this project */}
 			<ErrorMessage>Could not load weather data for you location. Try disabling your ad blocker.</ErrorMessage>
 		</ErrorWrapper>
 	);

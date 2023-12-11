@@ -12,6 +12,8 @@ import { Footer } from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// This is the about page. It contains information about the team and the project.
+
 const AboutWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -47,6 +49,7 @@ const LinkWrapper = styled.div`
 const inner = "#FFFFFF";
 const outer = "#7FCCFF";
 
+// wraps the page and ensures the whole screen is filled
 const PageWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -66,6 +69,7 @@ export default function About() {
 
 	return (
 		<PageWrapper>
+			{/* metadata for this page */}
 			<Head>
 				<title>About | CS392 Final</title>
 				<meta name="description" content="Our weather app" />
@@ -77,17 +81,11 @@ export default function About() {
 			{/* <main style={{ height: "100%" }}> */}
 			<main className={`${styles.main} ${inter.className}`}>
 				<Title>
+					{/* typing animation for the header */}
 					<TypeIt
 						getBeforeInit={(instance) =>
 							instance.type("Meet our team").pause(500).type("!!!").pause(500).type(" :]")
 						}
-						// // remove blinking cursor; doesn't work, causes issues when switching pages
-						// options={{
-						// 	lifeLike: true,
-						// 	afterComplete: (instance) => {
-						// 		instance.destroy();
-						// 	},
-						// }}
 					/>
 				</Title>
 				<AboutWrapper>

@@ -58,6 +58,7 @@ const SocialLinksWrapper = styled.div`
 	width: 100%;
 `;
 
+// animated border
 const LightBox = styled.div`
 	border-radius: 1.4rem;
 	margin: 1rem;
@@ -89,6 +90,7 @@ const LightBox = styled.div`
 	}
 `;
 
+// this component is used to display the social links for each member
 const SocialLinks = (socials) => {
 	const s = socials.socials;
 	const links = s.filter((social) => social.url);
@@ -98,6 +100,7 @@ const SocialLinks = (socials) => {
 			{links.map((social, i) => (
 				<div key={i} style={{ height: "auto", margin: "0.25rem", maxWidth: maxW, width: "100%" }}>
 					<Link href={social.url} target="_blank">
+						{/* display the relevant image for each link, if no image exists create a qr code */}
 						{social.imgSrc ? (
 							<Image src={social.imgSrc} alt={social.url} width={maxW} height={maxW} />
 						) : (
@@ -115,9 +118,10 @@ const SocialLinks = (socials) => {
 	);
 };
 
+// this function creates the member component for each member
+// maps the social links of the member to the social links component
 function createMember(member, key) {
-	const { name, picture, bio, socials } = member;
-	// console.log(member);
+	const { name, picture, bio, socials } = member; // get the relevant info from the member object
 	return (
 		<LightBox>
 			<MemberWrapper key={key}>
@@ -136,6 +140,8 @@ function createMember(member, key) {
 	);
 }
 
+// this is the main export component for this file
+// it creates the team component by mapping each member to a member component
 export const Team = () => {
 	return <TeamWrapper>{TeamMembers.map((member, i) => createMember(member, i))}</TeamWrapper>;
 };

@@ -1,4 +1,7 @@
+// Description: This is the data describing each member of the team. This is displayed on the about page.
+
 export const TeamMembers = [
+	// Jeffrey's info
 	{
 		name: "Jeffrey Ting",
 		bio: "Hello! I'm a student at Boston University studying Computer Science and Philosophy.",
@@ -18,6 +21,7 @@ export const TeamMembers = [
 		],
 		picture: "https://avatars.githubusercontent.com/u/102833218?v=4",
 	},
+	// Rida's info
 	{
 		name: "Rida Naeem",
 		bio: "Hello! I'm a student at Boston University studying Neuroscience and Computer Science.",
@@ -37,6 +41,7 @@ export const TeamMembers = [
 		],
 		picture: "https://avatars.githubusercontent.com/u/118070280?v=4",
 	},
+	// Abir's info
 	{
 		name: "Abir Islam",
 		bio: "Hello! I'm a student at Boston University studying Computer Science.",

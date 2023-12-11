@@ -12,6 +12,7 @@ const LoadingWrapper = styled.div`
 	font-size: 2rem;
 `;
 
+// displays a loading screen for the time it takes to fetch the weather data
 export const Loading = () => {
 	return <LoadingWrapper>Loading...</LoadingWrapper>;
 };
