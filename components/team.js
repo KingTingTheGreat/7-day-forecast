@@ -20,7 +20,7 @@ const MemberWrapper = styled.div`
 	margin: 0.5rem;
 	padding: 0.5rem;
 	border-radius: 1.5rem;
-	background-color: aquamarine;
+	background-color: #ffffff;
 `;
 
 const MemberName = styled.h2`
