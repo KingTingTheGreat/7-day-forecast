@@ -11,7 +11,7 @@ const DayWrapper = styled.div`
 	border: 1px solid white;
 	border-radius: 1rem;
 	padding: 1rem;
-	height: 50%;
+	align-self: stretch;
 `;
 
 const Date = styled.h2`
@@ -46,6 +46,11 @@ const Precip = styled.h4`
 	color: #445de3;
 `;
 
+const Snow = styled.h4`
+	align-items: left;
+	color: #a577f1;
+`;
+
 export const DayWeather = ({ day }) => {
 	console.log(day);
 	const date = day.datetime;
@@ -63,9 +68,29 @@ export const DayWeather = ({ day }) => {
 	const description = day.description;
 	const icon = day.icon;
 
+	const months = [
+		"January",
+		"February",
+		"March",
+		"April",
+		"May",
+		"June",
+		"July",
+		"August",
+		"September",
+		"October",
+		"November",
+		"December",
+	];
+	const month = months[String(date).substring(5, 7) - 1];
+	const calDate = String(date).substring(8, 11);
+	const year = String(date).substring(0, 4);
+
 	return (
 		<DayWrapper>
-			<Date>{date}</Date>
+			<Date>
+				{month} {calDate}, {year}
+			</Date>
 			<Container>
 				<Temp>
 					Low / High
@@ -105,6 +130,7 @@ export const DayWeather = ({ day }) => {
 			<Description>
 				{description}
 				<Precip>{preciptype !== null ? <p>{precipprob}% chance of precipitation</p> : null}</Precip>
+				<Snow>{snow !== 0 ? <p>Expecting {snowdepth} in. of snow</p> : null}</Snow>
 			</Description>
 			{/* <p>date: {date}</p>
 			<p>temp high: {tempmax}&deg;F</p>
