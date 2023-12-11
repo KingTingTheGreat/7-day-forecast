@@ -62,7 +62,7 @@ const LightBox = styled.div`
 	text-align: center;
 	--border-size: 10px;
 	--border-angle: 0turn;
-	width: 25%;
+	width: 30%;
 	height: 100%;
 	background-image: conic-gradient(from var(--border-angle), #213, #112 100%, #213),
 		conic-gradient(from var(--border-angle), transparent 10%, #0077ff, #00ffff);
