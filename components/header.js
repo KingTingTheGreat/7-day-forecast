@@ -31,7 +31,7 @@ const InfoButton = styled.button`
 	margin-right: 10px;
 `;
 
-export const Header = ({toggleInfo}) => {
+export const Header = ({ toggleInfo }) => {
 	return (
 		<NavWrapper>
 			<Logo />

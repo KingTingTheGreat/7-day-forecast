@@ -24,7 +24,7 @@ export default function Home() {
 	const [infoVis, setInfoVis] = useState(false);
 
 	function toggleInfo() {
-		setInfoVis(!infoVis)
+		setInfoVis(!infoVis);
 	}
 
 	useEffect(() => {
@@ -71,8 +71,8 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/icon.png" />
 			</Head>
-			<Header toggleInfo={toggleInfo}/>
-			<Info infoVis={infoVis}/>
+			<Header toggleInfo={toggleInfo} />
+			<Info infoVis={infoVis} />
 			<main className={`${styles.main} ${inter.className}`}>
 				{/* <PageWrapper> */}
 				<h1>Weather Page</h1>
