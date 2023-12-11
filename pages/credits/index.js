@@ -31,8 +31,10 @@ const Title = styled.p`
 `;
 
 export default function Credits() {
+	//useState hook that keeps track of info page visibility
 	const [infoVis, setInfoVis] = useState(false);
 	function toggleInfo() {
+		//function that toggles info page visibility
 		setInfoVis(!infoVis);
 	}
 

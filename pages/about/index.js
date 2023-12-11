@@ -61,9 +61,11 @@ const PageWrapper = styled.div`
 `;
 
 export default function About() {
+	//useState hook that keeps track of info page visibility
 	const [infoVis, setInfoVis] = useState(false);
 
 	function toggleInfo() {
+		//function that toggles info page visibility
 		setInfoVis(!infoVis);
 	}
 

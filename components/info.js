@@ -13,6 +13,7 @@ const InfoPage = styled.div`
 `;
 
 export const Info = ({ infoVis }) => {
+	//simple react component with a fixed position and z-index to act as a pop-up info screen
 	return (
 		<InfoPage style={{ display: infoVis ? "block" : "none" }}>
 			<h1 style={{ textAlign: "center" }}>INFO</h1>

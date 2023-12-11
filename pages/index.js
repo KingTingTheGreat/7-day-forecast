@@ -53,6 +53,7 @@ export default function Home() {
 	const [icon, setIcon] = useState(null);
 
 	const toggleInfo = () => {
+		//function that toggles info page visibility
 		setInfo(!info);
 	};
 

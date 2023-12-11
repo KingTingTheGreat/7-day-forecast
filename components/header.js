@@ -33,6 +33,7 @@ const InfoButton = styled.button`
 `;
 
 // the header displayed at the top of the page with links to the home page and the about page
+// header component is passed the toggleInfo function so info page can be accessed from header
 export const Header = ({ toggleInfo }) => {
 	return (
 		<NavWrapper>

@@ -60,6 +60,7 @@ const SocialLinksWrapper = styled.div`
 
 // animated border
 const LightBox = styled.div`
+	//styled component that makes use of an animated background gradient to produce an animated border
 	border-radius: 1.4rem;
 	margin: 1rem;
 	text-align: center;
