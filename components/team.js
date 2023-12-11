@@ -19,7 +19,6 @@ const MemberWrapper = styled.div`
 	width: 18rem;
 	margin: 0.5rem;
 	padding: 0.5rem;
-	border-radius: 1.5rem;
 	background-color: #ffffff;
 `;
 
@@ -58,6 +57,30 @@ const SocialLinksWrapper = styled.div`
 	width: 100%;
 `;
 
+const LightBox = styled.div`
+	margin: 1rem;
+	text-align: center;
+	--border-size: 10px;
+	--border-angle: 0turn;
+	width: 30%;
+	height: 100%;
+	background-image: conic-gradient(from var(--border-angle),
+	#213,
+	#112 100%,
+	#213),
+	conic-gradient(from var(--border-angle), transparent 10%, #0077ff, #00ffff);
+	background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)),
+	cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	animation: bg-spin 6s linear infinite;
+	@keyframes bg-spin {
+		to {
+			--border-angle: 1turn;
+		}
+	}
+`;
+
 const SocialLinks = (socials) => {
 	const s = socials.socials;
 	const links = s.filter((social) => social.url);
@@ -88,18 +111,20 @@ function createMember(member, key) {
 	const { name, picture, bio, socials } = member;
 	// console.log(member);
 	return (
-		<MemberWrapper key={key}>
-			<MemberName>{name}</MemberName>
-			<ImageWrapper>
-				<ImageStyler>
-					<Image src={picture} alt={name} width={150} height={150} />
-				</ImageStyler>
-			</ImageWrapper>
-			<MemberBio>{bio}</MemberBio>
-			<SocialLinksWrapper>
-				<SocialLinks socials={socials} />
-			</SocialLinksWrapper>
-		</MemberWrapper>
+		<LightBox>
+			<MemberWrapper key={key}>
+				<MemberName>{name}</MemberName>
+				<ImageWrapper>
+					<ImageStyler>
+						<Image src={picture} alt={name} width={150} height={150} />
+					</ImageStyler>
+				</ImageWrapper>
+				<MemberBio>{bio}</MemberBio>
+				<SocialLinksWrapper>
+					<SocialLinks socials={socials} />
+				</SocialLinksWrapper>
+			</MemberWrapper>
+		</LightBox>
 	);
 }
 

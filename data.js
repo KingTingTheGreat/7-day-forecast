@@ -42,7 +42,7 @@ export const TeamMembers = [
 		bio: "Hello! I'm a student at Boston University studying Computer Science.",
 		socials: [
 			{
-				url: "https://www.linkedin.com/",
+				url: "https://www.linkedin.com/in/abir-islam-18a8331aa/",
 				imgSrc: "https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg",
 			},
 			{
@@ -50,7 +50,7 @@ export const TeamMembers = [
 				imgSrc: "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png",
 			},
 			{
-				url: "https://cs-people.bu.edu/aislam99/cs392/projects/mini-projects/mp4/build/",
+				url: "https://cs-people.bu.edu/aislam99/resume/build/index.html",
 				imgSrc: undefined,
 			},
 		],

@@ -9,6 +9,7 @@ const InfoPage = styled.div`
 	border-radius: 10px;
 	padding: 10px;
 	margin: 30px;
+	margin-top: 80px;
 `;
 
 export const Info = ({ infoVis }) => {
