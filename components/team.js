@@ -20,6 +20,7 @@ const MemberWrapper = styled.div`
 	margin: 0.5rem;
 	padding: 0.5rem;
 	background-color: #ffffff;
+	border-radius: 1rem;
 `;
 
 const MemberName = styled.h2`
@@ -58,22 +59,24 @@ const SocialLinksWrapper = styled.div`
 `;
 
 const LightBox = styled.div`
+	border-radius: 1.4rem;
 	margin: 1rem;
 	text-align: center;
 	--border-size: 10px;
 	--border-angle: 0turn;
-	width: 30%;
+	width: fit;
 	height: 100%;
-	background-image: conic-gradient(from var(--border-angle),
-	#213,
-	#112 100%,
-	#213),
-	conic-gradient(from var(--border-angle), transparent 10%, #0077ff, #00ffff);
-	background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)),
-	cover;
+	background-image: conic-gradient(
+			from var(--border-angle),
+			rgba(33, 33, 33, 0),
+			rgba(17, 17, 17, 0) 100%,
+			rgba(33, 33, 33, 0)
+		),
+		conic-gradient(from var(--border-angle), transparent 10%, #0077ff, #00aaff);
+	background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
 	background-position: center center;
 	background-repeat: no-repeat;
-	animation: bg-spin 6s linear infinite;
+	animation: bg-spin 12s linear infinite;
 	@keyframes bg-spin {
 		to {
 			--border-angle: 1turn;
