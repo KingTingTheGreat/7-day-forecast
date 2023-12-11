@@ -12,6 +12,7 @@ import { Moon } from "@/components/moon";
 import { Sun } from "@/components/sun";
 import { Clouds } from "@/components/clouds";
 import { Rain } from "@/components/rain";
+import { Snowman } from "@/components/snowman";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,8 +22,18 @@ const AddOn = styled.div`
 	left: 0;
 	z-index: 1;
 	margin: 1rem 2.5rem;
-	width: 60%;
-	height: 60%;
+	width: 50%;
+	height: 50%;
+`;
+
+const SnowAddOn = styled.div`
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	margin: 1rem 0;
+	width: 10%;
+	height: 70%;
 `;
 
 export default function Home() {
@@ -150,13 +161,18 @@ export default function Home() {
 				)}
 				{/* </PageWrapper> */}
 			</main>
-			<AddOn>
-				{pic === "moon" ? <Moon /> : null}
-				{pic === "sun" ? <Sun /> : null}
-				{pic === "rain" ? <Rain /> : null}
-				{pic === "snow" ? <Moon /> : null}
-				{pic === "cloud" ? <Clouds /> : null}
-			</AddOn>
+			{pic === "snow" ? (
+				<SnowAddOn>
+					<Snowman />
+				</SnowAddOn>
+			) : (
+				<AddOn>
+					{pic === "moon" ? <Moon /> : null}
+					{pic === "sun" ? <Sun /> : null}
+					{pic === "rain" ? <Rain /> : null}
+					{pic === "cloud" ? <Clouds /> : null}
+				</AddOn>
+			)}
 			<Footer />
 		</PageWrapper>
 	);
